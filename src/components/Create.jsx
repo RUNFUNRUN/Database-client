@@ -8,13 +8,16 @@ export const Create = (props) => {
     const description = useRef(null);
     const deadline = useRef(null);
     const today = new Date();
+    const month = today.getMonth() + 1;
+    const day = today.getDate();
+    const today_yyyymmdd = today.getFullYear() + "-" + month.toString().padStart(2, "0") + "-" + day.toString().padStart(2, "0");
 
     const handleCreate = (e) => {
         e.preventDefault();
         const issue = {
             title: title.current.value,
             description: description.current.value,
-            date: today,
+            date: today_yyyymmdd,
             deadline: deadline.current.value,
             state: 0,
         };
@@ -36,7 +39,7 @@ export const Create = (props) => {
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicDescription">
                         <Form.Label>Descrition</Form.Label>
-                        <Form.Control ref={description} />
+                        <Form.Control as="textarea" ref={description} />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicDeadline">
                         <Form.Label>Deadline</Form.Label>
