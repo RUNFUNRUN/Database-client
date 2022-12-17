@@ -3,7 +3,7 @@ import axios from "axios";
 const request = async (path, method, data) => {
     const response = await axios({
         method: method,
-        url: `http://localhost:3001${path}`,
+        url: `${process.env.REACT_APP_API_ENDPOINT}${path}`,
         params: data,
     });
     return response.data;
