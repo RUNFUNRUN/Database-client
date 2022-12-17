@@ -1,7 +1,7 @@
 import React from 'react';
-import {useState, useEffect, useRef} from 'react';
+import {useState, useRef} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Button, Form} from 'react-bootstrap';
+import {Button, Form, Navbar, Container} from 'react-bootstrap';
 import {Link, useNavigate} from 'react-router-dom';
 import {createAccount} from '../api.js';
 import '../App.css';
@@ -33,7 +33,12 @@ export const Register = (props) => {
     };
 
     return (
-        <div>
+        <>
+            <Navbar bg="light" expand="lg">
+                <Container>
+                    <Navbar.Brand>Issue Management</Navbar.Brand>
+                </Container>
+            </Navbar>
             <Form className='login-form' onSubmit={handleRegister}>
                 <Form.Group className="mb-3" controlId="formBasicUserId">
                     <Form.Label>User ID</Form.Label>
@@ -47,11 +52,14 @@ export const Register = (props) => {
                     <Form.Label>Confirm Password</Form.Label>
                     <Form.Control type="password" placeholder="Enter Password" ref={confirmNewPassword} />
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button variant="secondary" type="submit">
                     Register
                 </Button>
                 <p className='error'>{error}</p>
             </Form>
-        </div>
+            <div className='sub'>
+                <Link to="/login">Login</Link>
+            </div>
+        </>
     );
 }

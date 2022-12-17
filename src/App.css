@@ -10,16 +10,29 @@
     margin-top: 10%;
     padding: 0.5em 1em;
     font-weight: bold;
-    color: #6091d3;/*文字色*/
+    color: gray;
     background: #FFF;
-    border: solid 3px #6091d3;/*線*/
-    border-radius: 10px;/*角の丸み*/
+    border: solid 3px gray;
 }
 
-.register{
+.sub{
     margin-top: 1%;
+}
+
+.sub a{
+    color: gray;
+    text-decoration: none;
 }
 
 .error{
     color: red;
 }
+
+.page{
+    margin: 2%;
+}
+
+.danger{
+    color: red;
+}
+

@@ -1,7 +1,7 @@
 import React from 'react';
 import {useState, useRef} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Button, Form} from 'react-bootstrap';
+import {Button, Form, Navbar, Container} from 'react-bootstrap';
 import {Link, useNavigate} from 'react-router-dom';
 import {getLogin} from '../api.js';
 import '../App.css';
@@ -20,7 +20,6 @@ export const Login = (props) => {
             setError("");
             console.log("Login successful");
             props.setUserId(userId.current.value);
-            props.setPassword(password.current.value);
             navigate("/");
         } else {
             setError("Incorrect username or password");
@@ -29,6 +28,11 @@ export const Login = (props) => {
 
     return (
         <>
+            <Navbar bg="light" expand="lg">
+                <Container>
+                    <Navbar.Brand>Issue Management</Navbar.Brand>
+                </Container>
+            </Navbar>
             <Form className='login-form' onSubmit={handleLogin}>
                 <Form.Group className="mb-3" controlId="formBasicUserId">
                     <Form.Label>User ID</Form.Label>
@@ -38,12 +42,12 @@ export const Login = (props) => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" placeholder="Enter Password" ref={password} />
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button variant="secondary" type="submit">
                     Login
                 </Button>
                 <p className='error'>{error}</p>
             </Form>
-            <div className='register'>
+            <div className='sub'>
                 <Link to="/register">Register</Link>
             </div>
         </>
