@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React, {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
@@ -8,8 +8,8 @@ import {Register} from './components/Register';
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const userId = useRef(null);
-    const password = useRef(null);
+    const [userId, setUserId] = useState("");
+    const [password, setPassword] = useState("");
 
     return (
         <div className='App'>
@@ -17,15 +17,24 @@ function App() {
                 <Routes>
                     <Route path="/login" element={
                         <Login
-                            userId={userId}
-                            password={password}
-                            isLoggedIn={isLoggedIn}
+                            setUserId={setUserId}
+                            setPassword={setPassword}
                             setIsLoggedIn={setIsLoggedIn}
                         />
                     } />
-                    <Route path="/register" element={<Register />} />
+                    <Route path="/register" element={
+                        <Register
+                            setUserId={setUserId}
+                            setPassword={setPassword}
+                            setIsLoggedIn={setIsLoggedIn}
+                        />
+                    } />
                     <Route path="/" element={
-                        isLoggedIn ? <Home isLoggedIn={isLoggedIn} /> : <Navigate replace to="/login" />
+                        isLoggedIn ? <Home
+                            isLoggedIn={isLoggedIn}
+                            userId={userId}
+                            password={password}
+                        /> : <Navigate replace to="/login" />
                     } />
                 </Routes>
             </BrowserRouter >

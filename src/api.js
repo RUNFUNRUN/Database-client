@@ -9,23 +9,18 @@ const request = async (path, method, data) => {
     return response.data;
 };
 
-export const Test = async () => {
-    const row = await request("/test", "GET");
-    return row[0].id;
-}
-
-export const serchId = async (userId) => {
-    const data = {
-        id: userId
-    }
-    const row = await request("/serch-id", "GET", data);
-    return row[0].id;
-}
-
 export const getLogin = async (userId, password) => {
     const data = {
         id: userId,
         password: password
     }
-    return await request("/getLogin", "GET", data);
+    return await request("/login", "GET", data);
+};
+
+export const createAccount = async (userId, password) => {
+    const data = {
+        id: userId,
+        password: password
+    }
+    return await request("/create-account", "POST", data);
 };
