@@ -39,7 +39,7 @@ export const Register = (props) => {
                     <Navbar.Brand>Issue Management</Navbar.Brand>
                 </Container>
             </Navbar>
-            <Form className='login-form' onSubmit={handleRegister}>
+            <Form className='form' onSubmit={handleRegister}>
                 <Form.Group className="mb-3" controlId="formBasicUserId">
                     <Form.Label>User ID</Form.Label>
                     <Form.Control placeholder="Enter User ID" ref={newUserId} />
