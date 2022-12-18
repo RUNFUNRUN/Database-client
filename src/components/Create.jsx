@@ -1,6 +1,6 @@
 import React, {useState, useRef} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Button, Form, Navbar, Container} from 'react-bootstrap';
+import {Button, Form} from 'react-bootstrap';
 import {Navigation} from './Navigation.jsx';
 
 export const Create = (props) => {
@@ -32,7 +32,7 @@ export const Create = (props) => {
                 userId={props.userId}
             />
             <div>
-                <Form className='form' onSubmit={handleCreate}>
+                <Form className='form create' onSubmit={handleCreate}>
                     <Form.Group className="mb-3" controlId="formBasicTitle">
                         <Form.Label>Title</Form.Label>
                         <Form.Control ref={title} />

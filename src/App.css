@@ -4,7 +4,6 @@
 
 .form {
     width: 100%;
-    max-width: 330px;
     padding: 15px;
     margin: auto;
     margin-top: 10%;
@@ -13,6 +12,14 @@
     color: gray;
     background: #FFF;
     border: solid 3px gray;
+}
+
+.login {
+    max-width: 330px;
+}
+
+.create {
+    max-width: 500px;
 }
 
 .sub{

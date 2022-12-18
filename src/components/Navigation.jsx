@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {Container, Navbar, Nav} from 'react-bootstrap';
-import {Navigate, useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 export const Navigation = (props) => {
     const navigate = useNavigate();
