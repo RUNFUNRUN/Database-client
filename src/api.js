@@ -24,3 +24,42 @@ export const createAccount = async (userId, password) => {
     }
     return await request("/create-account", "POST", data);
 };
+
+export const createIssue = async (userId, title, discription, startline, deadline, state) => {
+    const data = {
+        id: userId,
+        title: title,
+        discription: discription,
+        startline: startline,
+        deadline: deadline,
+        state: state
+    }
+    return await request("/create-issue", "POST", data);
+}
+
+export const editIssue = async (userId, title, discription, startline, deadline, state) => {
+    const data = {
+        id: userId,
+        title: title,
+        discription: discription,
+        startline: startline,
+        deadline: deadline,
+        state: state
+    }
+    return await request("/edit-issue", "PUT", data);
+}
+
+export const deleteIssue = async (userId, title) => {
+    const data = {
+        id: userId,
+        title: title
+    }
+    return await request("/delete-issue", "DELETE", data);
+}
+
+export const getIssueList = async (userId) => {
+    const data = {
+        id: userId
+    }
+    return await request("/get-issue-list", "GET", data);
+}
