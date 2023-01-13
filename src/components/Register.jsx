@@ -22,10 +22,8 @@ export const Register = (props) => {
         const created = await createAccount(newUserId.current.value, newPassword.current.value);
         if (created) {
             setError("");
-            console.log("Account created");
             props.setIsLoggedIn(true);
             props.setUserId(newUserId.current.value);
-            props.setPassword(newPassword.current.value);
             navigate("/");
         } else {
             setError("User ID already exists");

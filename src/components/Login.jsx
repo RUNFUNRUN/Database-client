@@ -18,7 +18,6 @@ export const Login = (props) => {
         if (loggedIn) {
             props.setIsLoggedIn(true);
             setError("");
-            console.log("Login successful");
             props.setUserId(userId.current.value);
             navigate("/");
         } else {

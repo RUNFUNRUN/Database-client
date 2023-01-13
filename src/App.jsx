@@ -6,7 +6,6 @@ import {Login} from './components/Login';
 import {Register} from './components/Register';
 import {List} from './components/List';
 import {Create} from './components/Create';
-import {Edit} from './components/Edit';
 import {Delete} from './components/Delete';
 
 function App() {
@@ -37,11 +36,6 @@ function App() {
                         userId={userId}
                     />} />
                     <Route path="/home/create" element={<Create
-                        isLoggedIn={isLoggedIn}
-                        setIsLoggedIn={setIsLoggedIn}
-                        userId={userId}
-                    />} />
-                    <Route path="/home/edit" element={<Edit
                         isLoggedIn={isLoggedIn}
                         setIsLoggedIn={setIsLoggedIn}
                         userId={userId}

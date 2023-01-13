@@ -13,10 +13,6 @@ export const Navigation = (props) => {
         navigate('/home/create');
     };
 
-    const handleEditClick = () => {
-        navigate('/home/edit');
-    };
-
     const handleDeleteClick = () => {
         navigate('/home/delete');
     };
@@ -41,7 +37,6 @@ export const Navigation = (props) => {
                         <Nav className="me-auto">
                             <Nav.Link onClick={handleListClick}>Issue List</Nav.Link>
                             <Nav.Link onClick={handleCreateClick}>Create Issue</Nav.Link>
-                            <Nav.Link onClick={handleEditClick}>Edit Issue</Nav.Link>
                             <Nav.Link onClick={handleDeleteClick}>Delete Issue</Nav.Link>
                             <Nav.Link className='danger' onClick={handleLogout}>Logout</Nav.Link>
                         </Nav>

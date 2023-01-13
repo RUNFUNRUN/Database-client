@@ -1,9 +1,13 @@
-import React, {useState, useRef} from 'react';
+import React, {useRef, useState, useEffect} from 'react';
+import {useNavigate} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Button, Form} from 'react-bootstrap';
 import {Navigation} from './Navigation.jsx';
+import {createIssue} from '../api.js';
 
 export const Create = (props) => {
+    const navigate = useNavigate();
+    const [success, setSuccess] = useState(false);
     const title = useRef(null);
     const description = useRef(null);
     const deadline = useRef(null);
@@ -12,17 +16,25 @@ export const Create = (props) => {
     const day = today.getDate();
     const today_yyyymmdd = today.getFullYear() + "-" + month.toString().padStart(2, "0") + "-" + day.toString().padStart(2, "0");
 
-    const handleCreate = (e) => {
+    const handleCreate = async (e) => {
         e.preventDefault();
         const issue = {
+            userId: props.userId,
             title: title.current.value,
             description: description.current.value,
-            date: today_yyyymmdd,
+            startline: today_yyyymmdd,
             deadline: deadline.current.value,
             state: 0,
         };
-        console.log(issue);
+        const result = await createIssue(issue);
+        setSuccess(result);
     };
+
+    useEffect(() => {
+        if (success) {
+            navigate("/home/list");
+        }
+    }, [success]);
 
     return (
         <div>
