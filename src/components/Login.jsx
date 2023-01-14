@@ -35,11 +35,11 @@ export const Login = (props) => {
             <Form className='form login' onSubmit={handleLogin}>
                 <Form.Group className="mb-3" controlId="formBasicUserId">
                     <Form.Label>User ID</Form.Label>
-                    <Form.Control placeholder="Enter User ID" ref={userId} />
+                    <Form.Control placeholder="Enter User ID" ref={userId} required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Enter Password" ref={password} />
+                    <Form.Control type="password" placeholder="Enter Password" ref={password} required />
                 </Form.Group>
                 <Button variant="secondary" type="submit">
                     Login

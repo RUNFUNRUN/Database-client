@@ -47,15 +47,15 @@ export const Create = (props) => {
                 <Form className='form create' onSubmit={handleCreate}>
                     <Form.Group className="mb-3" controlId="formBasicTitle">
                         <Form.Label>Title</Form.Label>
-                        <Form.Control ref={title} />
+                        <Form.Control ref={title} required />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicDescription">
                         <Form.Label>Descrition</Form.Label>
-                        <Form.Control as="textarea" ref={description} />
+                        <Form.Control as="textarea" ref={description} required />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicDeadline">
                         <Form.Label>Deadline</Form.Label>
-                        <Form.Control type='date' ref={deadline} />
+                        <Form.Control type='date' ref={deadline} required />
                     </Form.Group>
                     <Button variant="secondary" type="submit">
                         Create Issue

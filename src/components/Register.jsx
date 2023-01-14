@@ -40,15 +40,15 @@ export const Register = (props) => {
             <Form className='form login' onSubmit={handleRegister}>
                 <Form.Group className="mb-3" controlId="formBasicUserId">
                     <Form.Label>User ID</Form.Label>
-                    <Form.Control placeholder="Enter User ID" ref={newUserId} />
+                    <Form.Control placeholder="Enter User ID" ref={newUserId} required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Enter Password" ref={newPassword} />
+                    <Form.Control type="password" placeholder="Enter Password" ref={newPassword} required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Confirm Password</Form.Label>
-                    <Form.Control type="password" placeholder="Enter Password" ref={confirmNewPassword} />
+                    <Form.Control type="password" placeholder="Enter Password" ref={confirmNewPassword} required />
                 </Form.Group>
                 <Button variant="secondary" type="submit">
                     Register
