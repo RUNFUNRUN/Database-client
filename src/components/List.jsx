@@ -5,17 +5,17 @@ import {Navigation} from './Navigation.jsx';
 import {getIssuesList, editIssueState} from '../api.js';
 
 export const List = (props) => {
-    const [update, setUpdata] = useState(false);
+    const [update, setUpdate] = useState(false);
     const [issues, setIssues] = useState([]);
 
     const handleComplete = async (issue) => {
         await editIssueState(issue.userId, issue.title, 1);
-        setUpdata(update ? false : true);
+        setUpdate(update ? false : true);
     };
 
     const handleIncomplete = async (issue) => {
         await editIssueState(issue.userId, issue.title, 0);
-        setUpdata(update ? false : true);
+        setUpdate(update ? false : true);
     };
 
     useEffect(() => {
